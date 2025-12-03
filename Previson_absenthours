@@ -1,0 +1,19 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+import numpy as np
+from sklearn.linear_model import LinearRegression
+from sklearn.model_selection import train_test_split
+
+#importation de mon dataset
+work=pd.read_csv('/storage/emulated/0/Android/media/com.transsion.phoenix/PHX_Archive/phx_extracted/archive(2)/MFGEmployees4.csv' , nrows=100)
+X=np.array(work['AbsentHours']).reshape(100,1)
+Y=np.array(work['Age']).reshape(100,1)
+X_train , X_test , y_train , y_test = train_test_split(Y,X,test_size=0.2)
+model=LinearRegression()
+model.fit(X_train,y_train)
+model.score(X_test,y_test)
+plt.plot(Y,model.predict(Y),c='green')
+plt.xlabel("Âge")
+plt.ylabel("Nombre d'heures d'absence")
+plt.show()
+
