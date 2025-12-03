@@ -1,0 +1,28 @@
+import numpy as np
+import matplotlib.pyplot as plt
+import pandas as pd
+
+# Création de deux tableaux puis génération d'un nuage de points
+X=np.array([1,3,5,4,6,7,9,8,10])
+Y=np.array([2,8,6,3,5,8,10,9,12])
+plt.scatter(X,Y,c='red',marker='o')
+plt.title("Nuage points de y en fonction de x")
+plt.xlabel("Variable X")
+plt.ylabel("Variable Y")
+
+
+# Génération d'une courbe
+plt.plot(X,Y,c='pink',marker='s')
+plt.title("Courbe de y en fonction de x")
+plt.xlabel(" Variable X")
+plt.ylabel(" Variable Y")
+
+
+#Génération de la courbe d'une fonction polynomiale
+x=np.linspace(0 , 100 , 1)
+y=x**2 + 7*x - 5
+plt.plot(x,y,c='blue',marker='^')
+plt.title("Courbe de la fonction f")
+plt.xlabel("x")
+plt.ylabel("f(x)")
+plt.show()
